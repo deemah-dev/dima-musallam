@@ -104,8 +104,7 @@
                     <!-- Video Player Display -->
                     @if (item.url) {
                       <div class="video-container-large mt-3">
-                        <iframe [src]="item.url" allow="fullscreen" allowfullscreen loading="lazy">
-                        </iframe>
+                        <video [src]="item.url" controls playsinline preload="metadata"></video>
                       </div>
                     }
                   </div>

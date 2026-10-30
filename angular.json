@@ -28,6 +28,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "MechanicShopVidoes",
+                "output": "MechanicShopVidoes"
               }
             ],
             "styles": ["src/styles.scss"]
