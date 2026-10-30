@@ -54,7 +54,7 @@ export class Msms {
           {
             id: 1,
             title: 'Authentication Flow & Automated Token Refresh',
-            url: 'MechanicShopVidoes/LoginAndView.mp4',
+            url: '/MechanicShopVidoes/LoginAndView.mp4',
           },
         ],
       },
@@ -67,12 +67,12 @@ export class Msms {
           {
             id: 1,
             title: 'Customer Registration & Vehicle Linking',
-            url: 'MechanicShopVidoes/AddCustomer.mp4',
+            url: '/MechanicShopVidoes/AddCustomer.mp4',
           },
           {
             id: 2,
             title: 'Updating Customer & Vehicle Metadata',
-            url: 'MechanicShopVidoes/EditAndViewCustomer.mp4',
+            url: '/MechanicShopVidoes/EditAndViewCustomer.mp4',
           },
         ],
       },
@@ -85,12 +85,12 @@ export class Msms {
           {
             id: 1,
             title: 'Cataloging New Repair Service Task',
-            url: 'MechanicShopVidoes/AddRepairTask.mp4',
+            url: '/MechanicShopVidoes/AddRepairTask.mp4',
           },
           {
             id: 2,
             title: 'Modifying Repair Task Details & Rates',
-            url: 'MechanicShopVidoes/EditAndViewRepairTask.mp4',
+            url: '/MechanicShopVidoes/EditAndViewRepairTask.mp4',
           },
         ],
       },
@@ -103,7 +103,7 @@ export class Msms {
           {
             id: 1,
             title: 'Technician Directory & Profile Inspection',
-            url: 'MechanicShopVidoes/ViewEmployees.mp4',
+            url: '/MechanicShopVidoes/ViewEmployees.mp4',
           },
         ],
       },
@@ -116,7 +116,7 @@ export class Msms {
           {
             id: 1,
             title: 'Work Order Creation & Schedule Allocation',
-            url: 'MechanicShopVidoes/AddWorkOrder.mp4',
+            url: '/MechanicShopVidoes/AddWorkOrder.mp4',
           },
         ],
       },
@@ -129,22 +129,22 @@ export class Msms {
           {
             id: 2,
             title: 'Reallocating Service Bay & Parking Spot',
-            url: 'MechanicShopVidoes/UpdateSpot.mp4',
+            url: '/MechanicShopVidoes/UpdateSpot.mp4',
           },
           {
             id: 3,
             title: 'Reassigning Assigned Technician',
-            url: 'MechanicShopVidoes/UpdateTechnician.mp4',
+            url: '/MechanicShopVidoes/UpdateTechnician.mp4',
           },
           {
             id: 4,
             title: 'Modifying Assigned Repair Tasks List',
-            url: 'MechanicShopVidoes/UpdateRepairTasks.mp4',
+            url: '/MechanicShopVidoes/UpdateRepairTasks.mp4',
           },
           {
             id: 5,
             title: 'Work Order State Transitions & Workflow Processing',
-            url: 'MechanicShopVidoes/StatusWorkFlow.mp4',
+            url: '/MechanicShopVidoes/StatusWorkFlow.mp4',
           },
         ],
       },
@@ -157,12 +157,12 @@ export class Msms {
           {
             id: 1,
             title: 'Invoice Generation & Cost Breakdown',
-            url: 'MechanicShopVidoes/IssueInvoice.mp4',
+            url: '/MechanicShopVidoes/IssueInvoice.mp4',
           },
           {
             id: 2,
             title: 'Settling Payment & Invoice Finalization',
-            url: 'MechanicShopVidoes/SettleInvoice.mp4',
+            url: '/MechanicShopVidoes/SettleInvoice.mp4',
           },
         ],
       },

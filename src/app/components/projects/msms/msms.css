@@ -121,7 +121,7 @@
     0 0 30px rgba(179, 128, 36, 0.3);
 }
 
-.video-container-large video {
+.video-container-large iframe {
   position: absolute;
   inset: 0;
   width: 100%;
