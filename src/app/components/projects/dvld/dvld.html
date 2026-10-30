@@ -81,7 +81,12 @@
 
                     @if (item.url) {
                       <div class="video-container-large mt-3">
-                        <iframe [src]="item.url" allow="autoplay" allowfullscreen loading="lazy">
+                        <iframe
+                          [src]="getSafeUrl(item.url)"
+                          allow="autoplay"
+                          allowfullscreen
+                          loading="lazy"
+                        >
                         </iframe>
                       </div>
                     }

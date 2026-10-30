@@ -101,10 +101,14 @@
                   <div class="content-block mb-4">
                     <h4 class="content-subtitle">{{ item.title }}</h4>
 
-                    <!-- Video Player Display -->
                     @if (item.url) {
                       <div class="video-container-large mt-3">
-                        <iframe [src]="item.url" allow="fullscreen" allowfullscreen loading="lazy">
+                        <iframe
+                          [src]="getSafeUrl(item.url)"
+                          allow="autoplay"
+                          allowfullscreen
+                          loading="lazy"
+                        >
                         </iframe>
                       </div>
                     }

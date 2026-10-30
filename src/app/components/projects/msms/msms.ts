@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProjectDetails } from '../../../models/project-details';
 import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-msms',
@@ -10,6 +11,11 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Msms {
+  private sanitizer = inject(DomSanitizer);
+
+  getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
   details: ProjectDetails = {
     id: 3,
@@ -54,7 +60,7 @@ export class Msms {
           {
             id: 1,
             title: 'Authentication Flow & Automated Token Refresh',
-            url: '/MechanicShopVidoes/LoginAndView.mp4',
+            url: 'https://www.youtube.com/embed/5Xwz9GDwuSc?si=IgHyCzC1XzcKGRl3',
           },
         ],
       },
@@ -67,12 +73,12 @@ export class Msms {
           {
             id: 1,
             title: 'Customer Registration & Vehicle Linking',
-            url: '/MechanicShopVidoes/AddCustomer.mp4',
+            url: 'https://www.youtube.com/embed/bzRc7WHZnBk?si=dAPMmT6AIFVEmoSN',
           },
           {
             id: 2,
             title: 'Updating Customer & Vehicle Metadata',
-            url: '/MechanicShopVidoes/EditAndViewCustomer.mp4',
+            url: 'https://www.youtube.com/embed/CnsS2i89e-w?si=uuPdfODae8gxatjr',
           },
         ],
       },
@@ -85,12 +91,12 @@ export class Msms {
           {
             id: 1,
             title: 'Cataloging New Repair Service Task',
-            url: '/MechanicShopVidoes/AddRepairTask.mp4',
+            url: 'https://www.youtube.com/embed/6JQGyRjMfig?si=Tjd1RI9u2I9qzR6d',
           },
           {
             id: 2,
             title: 'Modifying Repair Task Details & Rates',
-            url: '/MechanicShopVidoes/EditAndViewRepairTask.mp4',
+            url: 'https://www.youtube.com/embed/Qk4IM21KziA?si=EASTsO1ZEpZfohnf',
           },
         ],
       },
@@ -103,7 +109,7 @@ export class Msms {
           {
             id: 1,
             title: 'Technician Directory & Profile Inspection',
-            url: '/MechanicShopVidoes/ViewEmployees.mp4',
+            url: '',
           },
         ],
       },
@@ -116,7 +122,7 @@ export class Msms {
           {
             id: 1,
             title: 'Work Order Creation & Schedule Allocation',
-            url: '/MechanicShopVidoes/AddWorkOrder.mp4',
+            url: 'https://www.youtube.com/embed/hdLcWdTLF6w?si=VzEwVqToXzzE2VDi',
           },
         ],
       },
@@ -129,22 +135,22 @@ export class Msms {
           {
             id: 2,
             title: 'Reallocating Service Bay & Parking Spot',
-            url: '/MechanicShopVidoes/UpdateSpot.mp4',
+            url: '',
           },
           {
             id: 3,
             title: 'Reassigning Assigned Technician',
-            url: '/MechanicShopVidoes/UpdateTechnician.mp4',
+            url: '',
           },
           {
             id: 4,
             title: 'Modifying Assigned Repair Tasks List',
-            url: '/MechanicShopVidoes/UpdateRepairTasks.mp4',
+            url: 'https://www.youtube.com/embed/MobCO4sr3_Y?si=zLpI0qsjILS8d6mS',
           },
           {
             id: 5,
             title: 'Work Order State Transitions & Workflow Processing',
-            url: '/MechanicShopVidoes/StatusWorkFlow.mp4',
+            url: 'https://www.youtube.com/embed/MNWOWxi8eNI?si=yT4E5Ay5xITbtNVZ',
           },
         ],
       },
@@ -157,12 +163,12 @@ export class Msms {
           {
             id: 1,
             title: 'Invoice Generation & Cost Breakdown',
-            url: '/MechanicShopVidoes/IssueInvoice.mp4',
+            url: 'https://www.youtube.com/embed/Y3LvrIstdyU?si=-UcNaXfwaGXBuktN',
           },
           {
             id: 2,
             title: 'Settling Payment & Invoice Finalization',
-            url: '/MechanicShopVidoes/SettleInvoice.mp4',
+            url: 'https://www.youtube.com/embed/Xxeg3ywYf2k?si=h1IIrfaznGVuqIIO',
           },
         ],
       },

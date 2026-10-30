@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProjectDetails } from '../../../models/project-details';
 import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dvld',
@@ -10,6 +11,11 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Dvld {
+  private sanitizer = inject(DomSanitizer);
+
+  getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
   details: ProjectDetails = {
     id: 1,
@@ -32,18 +38,16 @@ export class Dvld {
         content: [
           {
             id: 1,
-            url:
-              '/DVLD_Details/LoginWithInactiveAccountPicture.png',
+            url: '',
           },
           {
             id: 2,
-            url:
-              '/DVLD_Details/FailedToLoginPicture.png',
+            url: '',
           },
           {
             id: 3,
             title: 'Successful Login Flow',
-            url: '/DVLD_Details/LoginSuccessfullyVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -56,17 +60,17 @@ export class Dvld {
           {
             id: 1,
             title: 'Filter & Search People',
-            url: '/DVLD_Details/PeopleFiltersVideo.mp4',
+            url: '',
           },
           {
             id: 2,
             title: 'Add New Person',
-            url: '/DVLD_Details/AddNewPersonVideo.mp4',
+            url: '',
           },
           {
             id: 3,
             title: 'View Info, Edit & Delete Person',
-            url: '/DVLD_Details/ManagePeopleVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -79,12 +83,12 @@ export class Dvld {
           {
             id: 1,
             title: 'Add New System User',
-            url: '/DVLD_Details/AddNewSystemUserVideo.mp4',
+            url: '',
           },
           {
             id: 2,
             title: 'Update Password · Activate/Deactivate · Delete',
-            url: '/DVLD_Details/ManageSystemUsersVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -97,17 +101,17 @@ export class Dvld {
           {
             id: 1,
             title: 'Submit New Local License Application',
-            url: '/DVLD_Details/AddNewLocalLicenseApplicationVideo.mp4',
+            url: '',
           },
           {
             id: 2,
             title: 'Schedule, Take & Retake Tests (Applies to All Three Stages)',
-            url: '/DVLD_Details/ScheduleTestsVideo.mp4',
+            url: '',
           },
           {
             id: 3,
             title: 'Issue License After Passing All Tests — Person Becomes a Driver',
-            url: '/DVLD_Details/IssueLicenseForTheFirstTimeVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -120,7 +124,7 @@ export class Dvld {
           {
             id: 1,
             title: 'Apply & Issue International License',
-            url: '/DVLD_Details/AddNewInternationalLicenseVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -133,7 +137,7 @@ export class Dvld {
           {
             id: 1,
             title: 'Renew Local License',
-            url: '/DVLD_Details/RenewLocalDrivingLicenseVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -146,7 +150,7 @@ export class Dvld {
           {
             id: 1,
             title: 'Replace Local License',
-            url: '/DVLD_Details/ReplaceLocalDrivingLicenseVideo.mp4',
+            url: '',
           },
         ],
       },
@@ -159,12 +163,12 @@ export class Dvld {
           {
             id: 1,
             title: 'Detain a License',
-            url: '/DVLD_Details/DetainLicenseVideo.mp4',
+            url: '',
           },
           {
             id: 2,
             title: 'Release a Detained License',
-            url: '/DVLD_Details/ReleaseDetainedLocalDrivingLicenseVideo.mp4',
+            url: '',
           },
         ],
       },
