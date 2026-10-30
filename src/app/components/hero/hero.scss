@@ -1,0 +1,45 @@
+.hero-section {
+  min-height: calc(100vh - 82px); // fallback for browsers without svh
+  min-height: calc(100svh - 82px);
+  box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  overflow: clip;
+
+  // Soft gold ambient glow behind the content (same gold as the rest of the site).
+  // The old black-to-transparent gradients were invisible on a black background.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(179, 128, 36, 0.1) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(115, 67, 11, 0.12) 0%, transparent 50%);
+  }
+
+  // Gentle staggered entrance
+  .container > * {
+    animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.92em;
+}

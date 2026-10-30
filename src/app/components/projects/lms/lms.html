@@ -1,0 +1,81 @@
+<main class="project-page">
+  <section class="project-hero">
+    <div class="container">
+      <a class="back-link" routerLink="/" fragment="projects">&larr; Back to projects</a>
+      <div class="hero-copy">
+        <p class="eyebrow">Featured project / 02</p>
+        <h1>{{ details.title }}</h1>
+        <p class="lead">{{ details.shortDescription }}</p>
+        <a class="btn btn-primary px-4" [href]="details.githubUrl" target="_blank"
+          >View source on GitHub</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <p class="eyebrow">The brief</p>
+          <h2 class="section-title text-start">A reliable library API</h2>
+        </div>
+        <p class="project-description">{{ details.fullDescription }}</p>
+      </div>
+
+      <div class="project-meta row g-4 mt-4">
+        <div class="col-lg-5">
+          <div class="meta-panel">
+            <p class="eyebrow">Architecture</p>
+            <h3>{{ details.architechture?.title }}</h3>
+            <div class="architecture-flow">
+              @for (layer of details.architechture?.layers; track layer; let last = $last) {
+                <span>{{ layer }}</span>
+                @if (!last) {
+                  <b>&rarr;</b>
+                }
+              }
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="meta-panel">
+            <p class="eyebrow">Built with</p>
+            <div class="tag-list">
+              @for (technology of details.technologies; track technology) {
+                <span class="tech-tag">{{ technology }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section feature-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Inside the API</p>
+        <h2 class="section-title text-start">Core capabilities</h2>
+      </div>
+      <div class="feature-grid">
+        @for (feature of details.features; track feature.id; let index = $index) {
+          <article class="feature-card">
+            <span class="feature-number">0{{ index + 1 }}</span>
+            <h3>{{ feature.title }}</h3>
+            @if (feature.description) {
+              <p>{{ feature.description }}</p>
+            }
+            @if (feature.content?.length) {
+              <ul>
+                @for (item of feature.content; track item.id) {
+                  <li>{{ item.title }}</li>
+                }
+              </ul>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>

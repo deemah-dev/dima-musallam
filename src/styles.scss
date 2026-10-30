@@ -1,0 +1,478 @@
+$deep-gold: #73430b;
+$pure-black: #000000;
+$luxury-card-bg: #0d0d0d;
+$gold-light: #fff8c2;
+$gold-mid: #b38024;
+$gold-dark: #613707;
+$ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: $deep-gold,
+  $dark: $pure-black,
+  $body-bg: $pure-black
+);
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body {
+  background-color: $pure-black !important;
+  color: #f5f5f7 !important;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+  zoom: 0.9;
+  scrollbar-width: thin;
+  scrollbar-color: $deep-gold $pure-black;
+
+  @media (max-width: 991.98px) {
+    scroll-padding-top: 44px;
+  }
+}
+
+::selection {
+  background: rgba($gold-mid, 0.35);
+  color: $gold-light;
+}
+
+:focus-visible {
+  outline: 2px solid rgba($gold-mid, 0.9);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.text-gold {
+  color: #d39d39;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+#hero,
+.hero-section {
+  background: $pure-black !important;
+  position: relative;
+}
+
+section:nth-of-type(even) {
+  background: linear-gradient(180deg, #000000 0%, #080808 50%, #000000 100%) !important;
+}
+
+section:nth-of-type(odd):not(#hero):not(.hero-section) {
+  background: linear-gradient(180deg, #000000 0%, #0b0b0a 50%, #000000 100%) !important;
+}
+
+section {
+  position: relative;
+  padding-top: clamp(3.5rem, 8vw, 5rem);
+  padding-bottom: clamp(3.5rem, 8vw, 5rem);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(115, 67, 11, 0) 0%,
+      rgba(255, 248, 194, 0.6) 50%,
+      rgba(115, 67, 11, 0) 100%
+    );
+    filter: drop-shadow(0 0 12px rgba(255, 248, 194, 0.45));
+    pointer-events: none;
+  }
+}
+
+section:last-of-type::after {
+  display: none !important;
+}
+
+.section-title {
+  background: linear-gradient(135deg, #73430b 0%, #fff8c2 35%, #b38024 65%, #613707 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: $gold-mid; // fallback
+  font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.25;
+  padding-bottom: 0.15em; // prevents descenders being clipped by background-clip
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  position: relative;
+  filter: drop-shadow(0 0 25px rgba(255, 248, 194, 0.35));
+
+  // small gold accent line under the title
+  &::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin: 0.9rem auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba($deep-gold, 0) 0%, $gold-mid 50%, rgba($deep-gold, 0) 100%);
+  }
+}
+
+/* ==========================================================================
+   Cards & tags
+   ========================================================================== */
+
+.custom-card {
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.6) 0%, rgba(5, 5, 5, 0.8) 100%) !important;
+  border: 1px solid rgba($deep-gold, 0.25) !important;
+  border-radius: 10px !important;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.4s $ease-luxury,
+    border-color 0.4s $ease-luxury,
+    box-shadow 0.4s $ease-luxury;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-6px);
+    border-color: rgba($gold-light, 0.5) !important;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(255, 248, 194, 0.25) !important;
+  }
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba($deep-gold, 0.05) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba($deep-gold, 0.35) !important;
+  padding: 0.4em 0.8em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #73430b, #b38024) !important;
+    color: $pure-black !important;
+    font-weight: 600;
+    border-color: transparent !important;
+    box-shadow: 0 0 15px rgba(182, 128, 36, 0.5);
+  }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn-primary,
+.btn-outline-light {
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($gold-mid, 0.45);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #73430b, #b38024) !important;
+  border: none !important;
+  color: $pure-black !important;
+  font-weight: 600;
+
+  &:hover {
+    background: linear-gradient(135deg, #94570f, #73430b) !important;
+    box-shadow: 0 0 25px rgba(182, 128, 36, 0.5);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+
+  &:hover {
+    border-color: #b38024 !important;
+    background-color: transparent !important;
+    color: #fff8c2 !important;
+    box-shadow: 0 0 15px rgba(182, 128, 36, 0.2);
+  }
+}
+
+/* ==========================================================================
+   Project Details Page Styling
+   ========================================================================== */
+
+.project-page {
+  padding-top: 2rem;
+  background-color: $pure-black;
+
+  // 1. Hero Section inside project details
+  .project-hero {
+    padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+    border-bottom: 1px solid rgba($deep-gold, 0.15);
+    background: radial-gradient(circle at 50% 0%, rgba($gold-mid, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+
+    .back-link {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+      display: inline-block;
+      margin-bottom: 2rem;
+
+      &:hover,
+      &:focus-visible {
+        color: $gold-light;
+        transform: translateX(-4px);
+      }
+    }
+
+    .eyebrow {
+      color: $gold-mid;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: clamp(1.02rem, 2vw, 1.15rem);
+      line-height: 1.75;
+      max-width: 700px;
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  // 2. Project Sections & Meta Panels
+  .project-section {
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+
+    .eyebrow {
+      color: $gold-mid;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-description {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .meta-panel {
+      background: linear-gradient(145deg, rgba(15, 15, 15, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%);
+      border: 1px solid rgba($deep-gold, 0.2);
+      border-radius: 12px;
+      padding: clamp(1.3rem, 3vw, 1.8rem);
+      height: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-color: rgba($gold-light, 0.3);
+      }
+
+      h3 {
+        color: #ffffff;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .architecture-flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+
+      span {
+        background: rgba($deep-gold, 0.12);
+        border: 1px solid rgba($deep-gold, 0.3);
+        color: $gold-light;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+
+        &:hover {
+          border-color: rgba($gold-light, 0.45);
+          box-shadow: 0 0 12px rgba(255, 248, 194, 0.15);
+        }
+      }
+
+      b {
+        color: $gold-mid;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // 3. Features Grid Section
+  .feature-section {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
+
+    .feature-grid {
+      display: grid;
+      // min() keeps cards from overflowing on very narrow screens
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: linear-gradient(145deg, rgba(18, 18, 18, 0.7) 0%, rgba(8, 8, 8, 0.9) 100%);
+      border: 1px solid rgba($deep-gold, 0.18);
+      border-radius: 12px;
+      padding: clamp(1.4rem, 3vw, 2rem);
+      position: relative;
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        border-color: rgba($gold-light, 0.4);
+        transform: translateY(-4px);
+        box-shadow:
+          0 12px 30px rgba(0, 0, 0, 0.6),
+          0 0 15px rgba(179, 128, 36, 0.15);
+      }
+
+      .feature-number {
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        color: rgba($deep-gold, 0.25);
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        pointer-events: none;
+        user-select: none;
+        transition: color 0.3s ease;
+      }
+
+      &:hover .feature-number {
+        color: rgba($gold-mid, 0.4);
+      }
+
+      h3 {
+        color: $gold-light;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 0.8rem;
+        padding-right: 2.5rem;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin-top: 0.8rem;
+        padding-left: 1.2rem;
+        margin-bottom: 0;
+
+        li {
+          color: rgba(255, 255, 255, 0.75);
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: 0.4rem;
+
+          &::marker {
+            color: $gold-mid;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .custom-card:hover,
+  .custom-card:focus-within,
+  .btn-primary:hover,
+  .project-page .project-hero .back-link:hover,
+  .project-page .feature-section .feature-card:hover {
+    transform: none !important;
+  }
+}

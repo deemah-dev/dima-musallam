@@ -1,0 +1,46 @@
+<section class="container my-5 py-5" id="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    @for (project of myProjects; track project.title) {
+      <div class="col">
+        <div class="card h-100 custom-card text-white">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 fw-bold mb-3 text-white">{{ project.title }}</h3>
+            <p class="card-text text-light opacity-75 small flex-grow-1">
+              {{ project.description }}
+            </p>
+
+            <div class="my-3 d-flex flex-wrap gap-2">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+
+            <div class="d-flex gap-2 mt-auto">
+              @if (project.githublink) {
+                <a
+                  [href]="project.githublink"
+                  target="_blank"
+                  class="btn btn-outline-light btn-sm w-100"
+                >
+                  GitHub
+                </a>
+              }
+              @if (project.livedemolink || project.demoRoute) {
+                <a
+                  [href]="project.livedemolink || null"
+                  [routerLink]="project.demoRoute || null"
+                  [target]="project.demoRoute ? undefined : '_blank'"
+                  class="btn btn-primary btn-sm w-100 text-dark fw-bold"
+                >
+                  Demo
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

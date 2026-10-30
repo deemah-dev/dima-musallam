@@ -1,0 +1,23 @@
+$premium-gold: #9B5E10;
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.text-gold {
+  text-shadow: 0 0 8px rgba($premium-gold, 0.6);
+}
+
+p {
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+// Justified text creates ugly gaps on narrow screens, so only enable it on tablets and up.
+@media (min-width: 768px) {
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}

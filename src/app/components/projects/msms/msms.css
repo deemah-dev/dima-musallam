@@ -1,0 +1,130 @@
+/* Custom Tags for Design Patterns & Architecture */
+.pattern-tag {
+  background: rgba(179, 128, 36, 0.12) !important;
+  border-color: rgba(179, 128, 36, 0.4) !important;
+  color: #fff8c2 !important;
+}
+
+.arch-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #ffffff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.arch-chip:hover {
+  border-color: rgba(179, 128, 36, 0.6);
+  box-shadow: 0 0 12px rgba(179, 128, 36, 0.2);
+}
+
+.arch-arrow {
+  color: #b38024;
+  margin: 0 0.4rem;
+}
+
+/* Shared showcase layout (kept identical to dvld.css so both pages look the same) */
+
+.feature-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.feature-wide-card {
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.85) 0%, rgba(5, 5, 5, 0.95) 100%);
+  border: 1px solid rgba(115, 67, 11, 0.3);
+  border-radius: 14px;
+  padding: clamp(1.3rem, 4vw, 2.5rem);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-wide-card:hover {
+  border-color: rgba(255, 248, 194, 0.4);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(255, 248, 194, 0.12);
+}
+
+.feature-wide-card h3 {
+  color: #fff8c2;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.feature-badge {
+  display: inline-block;
+  background: rgba(115, 67, 11, 0.2);
+  border: 1px solid rgba(179, 128, 36, 0.4);
+  color: #b38024;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.feature-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.content-subtitle {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.content-subtitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: #b38024;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(179, 128, 36, 0.5);
+}
+
+.video-container-large {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(179, 128, 36, 0.4);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(179, 128, 36, 0.15);
+  background-color: #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.video-container-large:hover {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(179, 128, 36, 0.3);
+}
+
+.video-container-large iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

@@ -1,0 +1,120 @@
+<main class="project-page">
+  <!-- Hero Section -->
+  <section class="project-hero">
+    <div class="container">
+      <a class="back-link" routerLink="/" fragment="projects">&larr; Back to projects</a>
+      <div class="hero-copy">
+        <p class="eyebrow">Featured Project / 03</p>
+        <h1>{{ details.title }}</h1>
+        <p class="lead">{{ details.shortDescription }}</p>
+
+        @if (details.githubUrl) {
+          <a class="btn btn-primary px-4" [href]="details.githubUrl" target="_blank">
+            View Front-end Source on GitHub
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Brief & Architecture Section -->
+  <section class="project-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <p class="eyebrow">The Brief</p>
+          <h2 class="section-title text-start">System Architecture & Overview</h2>
+        </div>
+        <p class="project-description">{{ details.fullDescription }}</p>
+      </div>
+
+      <!-- Metadata Panels -->
+      <div class="project-meta row g-4 mt-4">
+        <!-- Layered Architecture -->
+        <div class="col-lg-4">
+          <div class="meta-panel h-100">
+            <p class="eyebrow">Architecture</p>
+            <h3>{{ details.architechture?.title }}</h3>
+            <div class="architecture-flow mt-3">
+              @for (layer of details.architechture?.layers; track layer; let last = $last) {
+                <span class="arch-chip">{{ layer }}</span>
+                @if (!last) {
+                  <b class="arch-arrow">&rarr;</b>
+                }
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Design Patterns -->
+        @if (details.designPatterns?.length) {
+          <div class="col-lg-4">
+            <div class="meta-panel h-100">
+              <p class="eyebrow">Design Patterns & Practices</p>
+              <div class="tag-list mt-3">
+                @for (pattern of details.designPatterns; track pattern) {
+                  <span class="tech-tag pattern-tag">{{ pattern }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Built With -->
+        <div class="col-lg-4">
+          <div class="meta-panel h-100">
+            <p class="eyebrow">Built With</p>
+            <div class="tag-list mt-3">
+              @for (technology of details.technologies; track technology) {
+                <span class="tech-tag">{{ technology }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Showcase with Embedded Videos -->
+  <section class="project-section feature-section">
+    <div class="container">
+      <div class="section-heading mb-5">
+        <p class="eyebrow">Inside the System</p>
+        <h2 class="section-title text-start">Core Capabilities & Demo Walkthroughs</h2>
+      </div>
+
+      <div class="feature-stack">
+        @for (feature of details.features; track feature.id; let index = $index) {
+          <article class="feature-wide-card">
+            <div class="feature-header d-flex align-items-center justify-content-between mb-3">
+              <h3 class="m-0">{{ feature.title }}</h3>
+              <span class="feature-badge">0{{ index + 1 }}</span>
+            </div>
+
+            @if (feature.description) {
+              <p class="feature-desc">{{ feature.description }}</p>
+            }
+
+            @if (feature.content?.length) {
+              <div class="feature-content-wrapper mt-4">
+                @for (item of feature.content; track item.id) {
+                  <div class="content-block mb-4">
+                    <h4 class="content-subtitle">{{ item.title }}</h4>
+
+                    <!-- Video Player Display -->
+                    @if (item.url) {
+                      <div class="video-container-large mt-3">
+                        <iframe [src]="item.url" allow="fullscreen" allowfullscreen loading="lazy">
+                        </iframe>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</main>

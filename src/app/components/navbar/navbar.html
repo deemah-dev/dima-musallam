@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold text-gold" href="#">
+      <span class="text-white">Home</span>
+    </a>
+
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-3 nav-list">
+
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#about" (click)="closeMenu()">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#skills" (click)="closeMenu()">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#projects" (click)="closeMenu()">Projects</a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
