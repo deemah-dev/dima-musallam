@@ -65,7 +65,7 @@ export class Dvld {
           {
             id: 2,
             title: 'Add New Person',
-            url: '',
+            url: 'https://www.youtube.com/embed/GScFkk1hgMY?si=U4KwG80w-Utqp7wO',
           },
           {
             id: 3,
@@ -101,7 +101,7 @@ export class Dvld {
           {
             id: 1,
             title: 'Submit New Local License Application',
-            url: '',
+            url: 'https://www.youtube.com/embed/GIehkEPnS4A?si=IcC2dKXLtoUsPZ55',
           },
           {
             id: 2,
@@ -111,7 +111,7 @@ export class Dvld {
           {
             id: 3,
             title: 'Issue License After Passing All Tests — Person Becomes a Driver',
-            url: '',
+            url: 'https://www.youtube.com/embed/uTGPUuuywCk?si=KoSPaHozECCivJLm',
           },
         ],
       },
@@ -124,7 +124,7 @@ export class Dvld {
           {
             id: 1,
             title: 'Apply & Issue International License',
-            url: '',
+            url: 'https://www.youtube.com/embed/vDzpTMyJJjY?si=-HxUs_3kK4Ig25Gn',
           },
         ],
       },
@@ -163,7 +163,7 @@ export class Dvld {
           {
             id: 1,
             title: 'Detain a License',
-            url: '',
+            url: 'https://www.youtube.com/embed/EkdYPukxE5k?si=os5RajrGwOe99ZD5',
           },
           {
             id: 2,

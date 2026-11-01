@@ -109,7 +109,7 @@ export class Msms {
           {
             id: 1,
             title: 'Technician Directory & Profile Inspection',
-            url: '',
+            url: 'https://www.youtube.com/embed/uT23AC0b3w4?si=uHEbdGnnfXmP5Sp7',
           },
         ],
       },
@@ -135,12 +135,12 @@ export class Msms {
           {
             id: 2,
             title: 'Reallocating Service Bay & Parking Spot',
-            url: '',
+            url: 'https://www.youtube.com/embed/i9win4vXVY0?si=9l_6UZvfbfL1Va8G',
           },
           {
             id: 3,
             title: 'Reassigning Assigned Technician',
-            url: '',
+            url: 'https://www.youtube.com/embed/61OuobDG4IQ?si=cktVgP_nMy1C6AKQ',
           },
           {
             id: 4,
